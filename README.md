@@ -3,7 +3,10 @@
 ### Section 10 - React x Typescript（実践編）
 
 1. React × TypeScript の準備
+   `npm` install などの環境構築
+   `npx create-react-app my-app --template typescript`
 
 ### Links
 
 - [成果物](https://58mfxf.csb.app/)
+- [JSONPlaceholder's resources](https://jsonplaceholder.typicode.com/todos)
