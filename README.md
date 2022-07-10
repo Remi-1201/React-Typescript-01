@@ -10,7 +10,10 @@
 
 2. 型がないせいでバグっているアプリの例
 
+3. 取得データの型を定義しバグを防ぐ
+
 ### Links
 
 - [成果物](https://58mfxf.csb.app/)
+
 - [JSONPlaceholder's resources](https://jsonplaceholder.typicode.com/todos)

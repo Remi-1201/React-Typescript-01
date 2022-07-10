@@ -3,14 +3,27 @@ import { useState } from "react";
 import "./styles.css";
 import { Todo } from "./Todo";
 
+// 3- Todoのpropsに型を指定する
+type TodoType = {
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
+};
+
 export default function App() {
   // 2- <any> = useStateの型
-  const [todos, setTodos] = useState<any>([]);
+  // 3- <Array<TodoType>> = useStateの型
+  const [todos, setTodos] = useState<Array<TodoType>>([]);
 
   const onClickFetchData = () => {
-    axios.get("https://jsonplaceholder.typicode.com/todos").then((res) => {
-      setTodos(res.data);
-    });
+    // 3- <Array<TodoType>> = axiosにArrayというデータの型と、
+    // - 上記のTodoTypeの型を指定する
+    axios
+      .get<Array<TodoType>>("https://jsonplaceholder.typicode.com/todos")
+      .then((res) => {
+        setTodos(res.data);
+      });
   };
   return (
     <div className="App">
@@ -18,7 +31,8 @@ export default function App() {
       {todos.map((todo) => (
         // 2- 型を指定してあげないと取得した
         // - userid が undefinedになってしまう
-        <Todo title={todo.title} userid={todo.userid} />
+        // 3- "userid" -> "userId"
+        <Todo title={todo.title} userid={todo.userId} />
       ))}
     </div>
   );
