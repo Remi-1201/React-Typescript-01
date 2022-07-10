@@ -4,6 +4,7 @@ import "./styles.css";
 import { Todo } from "./Todo";
 // 5- コンポネント化したTodoTypeをimport
 import { TodoType } from "./types/todo";
+import { Text } from "./Text";
 
 // 3- Todoのpropsに型を指定する
 // 5- copy to ./types/todo.ts
@@ -24,6 +25,7 @@ export default function App() {
   };
   return (
     <div className="App">
+      <Text color="red" fontSize="18px" />
       <button onClick={onClickFetchData}>Get data</button>
       {todos.map((todo) => (
         // 2- 型を指定してあげないと取得した
