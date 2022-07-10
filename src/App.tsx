@@ -5,10 +5,17 @@ import { Todo } from "./Todo";
 // 5- コンポネント化したTodoTypeをimport
 import { TodoType } from "./types/todo";
 import { Text } from "./Text";
+import { UserProfile } from "./UserProfile";
+import { User } from "./types/user";
+
+//7- add function "user"
+const user: User = {
+  name: "Usa",
+  hobbies: ["Movie", "Game"]
+};
 
 // 3- Todoのpropsに型を指定する
 // 5- copy to ./types/todo.ts
-
 export default function App() {
   // 2- <any> = useStateの型
   // 3- <Array<TodoType>> = useStateの型
@@ -25,6 +32,7 @@ export default function App() {
   };
   return (
     <div className="App">
+      <UserProfile user={user} />
       <Text color="red" fontSize="18px" />
       <button onClick={onClickFetchData}>Get data</button>
       {todos.map((todo) => (
