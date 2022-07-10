@@ -4,9 +4,9 @@
 
 1. React × TypeScript の準備
 
-   `npm` install などの環境構築
+- `npm` install などの環境構築
 
-   `npx create-react-app my-app --template typescript`
+- `npx create-react-app my-app --template typescript`
 
 2. 型がないせいでバグっているアプリの例
 

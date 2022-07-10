@@ -2,13 +2,11 @@ import axios from "axios";
 import { useState } from "react";
 import "./styles.css";
 import { Todo } from "./Todo";
+// 5- コンポネント化したTodoTypeをimport
+import { TodoType } from "./types/todo";
 
 // 3- Todoのpropsに型を指定する
-type TodoType = {
-  userId: number;
-  title: string;
-  completed: boolean;
-};
+// 5- copy to ./types/todo.ts
 
 export default function App() {
   // 2- <any> = useStateの型
@@ -32,6 +30,7 @@ export default function App() {
         // - userid が undefinedになってしまう
         // 3- "userid" -> "userId"
         <Todo
+          key={todo.id}
           title={todo.title}
           userId={todo.userId}
           completed={todo.completed}
