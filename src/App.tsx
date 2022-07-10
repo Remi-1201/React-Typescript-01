@@ -6,7 +6,6 @@ import { Todo } from "./Todo";
 // 3- Todoのpropsに型を指定する
 type TodoType = {
   userId: number;
-  id: number;
   title: string;
   completed: boolean;
 };
@@ -32,7 +31,11 @@ export default function App() {
         // 2- 型を指定してあげないと取得した
         // - userid が undefinedになってしまう
         // 3- "userid" -> "userId"
-        <Todo title={todo.title} userid={todo.userId} />
+        <Todo
+          title={todo.title}
+          userId={todo.userId}
+          completed={todo.completed}
+        />
       ))}
     </div>
   );
